@@ -1,0 +1,7 @@
+4
+2 0 8 0
+2 4 8 16
+2 4 8 16
+0 4 0 16
+
+// important: test merge with 3 of the same tile in a col
