@@ -551,32 +551,23 @@ public class Board2048 {
                     // why? ints are primitives; passed by value, not reference
                     arr = merge(b, changing, constant, 
                                 temp1, temp2, position, 1);
-                    // update temp1, temp2, and position
-                    temp1 = arr[0];
-                    temp2 = arr[1];
-                    position = arr[2];
                 }
                 else if (direction == 2) {
                     arr = merge(b, constant, L - changing - 1, 
                                 temp1, temp2, position, 2);
-                    temp1 = arr[0];
-                    temp2 = arr[1];
-                    position = arr[2];
                 }
                 else if (direction == 3) {
                     arr = merge(b, L - changing - 1, constant, 
                                 temp1, temp2, position, 3);
-                    temp1 = arr[0];
-                    temp2 = arr[1];
-                    position = arr[2];
                 }
                 else if (direction == 4) {
                     arr = merge(b, constant, changing, 
                                 temp1, temp2, position, 4);
-                    temp1 = arr[0];
-                    temp2 = arr[1];
-                    position = arr[2];
                 }
+                // update temp1, temp2, and position
+                temp1 = arr[0];
+                temp2 = arr[1];
+                position = arr[2];
             }
         }
     }
