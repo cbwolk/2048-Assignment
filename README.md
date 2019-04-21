@@ -1,5 +1,7 @@
 # 2048-Assignment 
-# First Header | Second Header ------------ | ------------- Content cell 1 | Content cell 2
+## First Header | 
+## ------------
+
 
 **Goal:** Write a program that solves the modified version of the game 2048 (but only up to the 128 tile) using the A* search algorithm.
 
