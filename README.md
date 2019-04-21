@@ -1,4 +1,4 @@
-# 2048-Assignment 
+# 2048 Assignment 
 
 **Goal:** Write a program that solves the modified version of the game 2048 (but only up to the 128 tile) using the A* search algorithm.
 
