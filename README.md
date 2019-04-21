@@ -1,4 +1,4 @@
-# 2048-Assignment
+# 2048-Assignment First Header | ------------
 
 **Goal:** Write a program that solves the modified version of the game 2048 (but only up to the 128 tile) using the A* search algorithm.
 
@@ -74,7 +74,7 @@ public class Board {
 
 *Performance requirements.*  In the worst case, your implementation must support `size()` and `tileAt()` in constant time. The constructor,  `weightedScore()`, `snakeScore()`, `penalty()`, `hasWon()`, `gameFinished()`, `equals()`, `toString()`, and `neighbors()` must be supported in time proportional to L² (or better). 
 
-*Reducing duplicate code.*  To promote maintainability, to shorten code, and to make bugs easier to fix, it may be helpful to create private helper methods\—especially for the merge and swipe operations.
+*Reducing duplicate code.*  To promote maintainability, to shorten code, and to make bugs easier to fix, it may be helpful to create private helper methods—especially for the merge and swipe operations.
 
 **A\* search.** Now, we describe a solution to achieve the 128 tile that illustrates a general artificial intelligence methodology known as the A\* search algorithm. We define a search node of the game to be a board, the number of moves made to reach the board, and the previous search node. First, insert the initial search node (the initial board, 0 moves, and a null previous search node) into a priority queue. Then, delete from the priority queue the search node with the minimum priority, and insert onto the priority queue all neighboring search nodes (those that can be reached in one move from the dequeued search node). Repeat this procedure until the search node dequeued corresponds to the goal board.
 The efficacy of this approach hinges on the choice of priority function for a search node. We will examine the weighted score, snake score, and penalty, though we will only use the weighted score in the function.
