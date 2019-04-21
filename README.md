@@ -6,7 +6,7 @@
 
 **Board data type.** To begin, create a data type that models a L-by-L board with sliding tiles. Implement an immutable data type Board with the following API:
 
-'''
+'''java
 public class Board {
     // create a board from a L x L array of tiles,
     // where tiles[row][col] = tile at (row, col)
