@@ -1,7 +1,3 @@
-| Under Construction |
-| :----------------: |
-
-
 # 2048-Assignment 
 
 **Goal:** Write a program that solves the modified version of the game 2048 (but only up to the 128 tile) using the A* search algorithm.
@@ -42,6 +38,9 @@ public class Board {
 }
 
 ```
+
+| Section Below Under Construction |
+| :------------------------------: |
 
 *Merges.* You should implement a private method mergeTiles() to handle all merges. For up and down swipes, this method should iterate through every column and find adjacent tiles that have the same value. For left and right swipes, this method should iterate through every row and find adjacent tiles that have the same value. If there are three adjacent tiles with the same value, you must combine the two tiles closest to the border in the direction of motion. An example is shown below. 
 
