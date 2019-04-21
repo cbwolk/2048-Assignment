@@ -72,13 +72,14 @@ public class Board {
 
 *Unit testing.*  Your main() method must call each public method directly and help verify that they works as prescribed (e.g., by printing results to standard output).
 
-*Performance requirements.*  In the worst case, your implementation must support *size()* and *tileAt()* in constant time. The constructor,  *weightedScore()*, *snakeScore()*, *penalty()*, *hasWon()*, *gameFinished()*, *equals()*, *toString()*, and *neighbors()* must be supported in time proportional to L² (or better). 
+*Performance requirements.*  In the worst case, your implementation must support `size()` and `tileAt()` in constant time. The constructor,  `weightedScore()`, `snakeScore()`, `penalty()`, `hasWon()`, `gameFinished()`, `equals()`, `toString()`, and `neighbors()` must be supported in time proportional to L² (or better). 
 
 *Reducing duplicate code.*  To promote maintainability, to shorten code, and to make bugs easier to fix, it may be helpful to create private helper methods—especially for the merge and swipe operations.
 
 **A\* search.** Now, we describe a solution to achieve the 128 tile that illustrates a general artificial intelligence methodology known as the A\* search algorithm. We define a search node of the game to be a board, the number of moves made to reach the board, and the previous search node. First, insert the initial search node (the initial board, 0 moves, and a null previous search node) into a priority queue. Then, delete from the priority queue the search node with the minimum priority, and insert onto the priority queue all neighboring search nodes (those that can be reached in one move from the dequeued search node). Repeat this procedure until the search node dequeued corresponds to the goal board.
 The efficacy of this approach hinges on the choice of priority function for a search node. We will examine the weighted score, snake score, and penalty, though we will only use the weighted score in the function.
-⋅⋅* The weighted score is the product of the board multiplied by an array of weights. The weighted array should have a high number in the bottom left column, zero in the upper right column, and decrease by a constant factor diagonally. This way, higher numbers will naturally gravitate to the bottom left, away from the position where new tiles are added. An example is the following:
+
+..* The weighted score is the product of the board multiplied by an array of weights. The weighted array should have a high number in the bottom left column, zero in the upper right column, and decrease by a constant factor diagonally. This way, higher numbers will naturally gravitate to the bottom left, away from the position where new tiles are added. An example is the following:
 
 Weighted Array                             Board
       3   2   1   0                             0   0   0   2
@@ -88,8 +89,8 @@ Weighted Array                             Board
 
  = (2 x 0) + (2 x 5) + (4 x 4) + (8 x 6)  = 10 + 16 + 40 = 66
 
-⋅⋅* The snake score examines the tiles above, below, to the left, and to the right of the largest tile. The closer each tile is to the previous one in the given row or column, the higher the value that is added.
-⋅⋅* The penalty is the sum of the differences between each tile and every one of its neighbors. A high penalty is bad—this happens when large numbered tiles are scattered around the grid.
+..* The snake score examines the tiles above, below, to the left, and to the right of the largest tile. The closer each tile is to the previous one in the given row or column, the higher the value that is added.
+..* The penalty is the sum of the differences between each tile and every one of its neighbors. A high penalty is bad—this happens when large numbered tiles are scattered around the grid.
 
 Solver data type. In this part, you will implement A* search to solve n-by-n slider puzzles. Create an immutable data type Solver with the following API:
 
